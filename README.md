@@ -4,7 +4,9 @@ vimconfig
 
 git clone
 
-cp -r vimconfig ~/.vim
+cd vimconfig
+
+cp -r . ~/.vim
 
 mv ~/.vim/.vimrc ~/
 

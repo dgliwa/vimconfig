@@ -49,6 +49,8 @@ cnoreabbrev qA qa
 cnoreabbrev QA qa
 cnoreabbrev X x
 
+runtime macros/matchit.vim
+
 " General settings
 filetype plugin indent on
 set hlsearch incsearch
@@ -91,3 +93,9 @@ let g:ctrlp_cache_dir = "/tmp/"
 let g:ctrlp_custom_ignore = { 'dir':  '\(node_modules\|.git\|.tmp\)$'
                             \ }
 let g:vroom_use_vimux = 1
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4 foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*/\\?\\\*'
